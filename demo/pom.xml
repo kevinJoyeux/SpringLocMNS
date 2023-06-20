@@ -96,7 +96,7 @@
 				<initialisation_donne_bdd>false</initialisation_donne_bdd>
 				<mod_initialisation_donne_bdd>never</mod_initialisation_donne_bdd>
 				<dossier_upload>/uploads</dossier_upload>
-				<jwt_secret>info à définir dans le fichier settings.xml du serveur</jwt_secret>
+				<jwt_secret>info à définir dans le fichier settings.xml du serveur choisi</jwt_secret>
 			</properties>
 		</profile>
 	</profiles>
