@@ -63,12 +63,67 @@
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
-
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<skipUnitTest>false</skipUnitTest>
+				<adresse_serveur_bdd>localhost:3306</adresse_serveur_bdd>
+				<nom_bdd>spring_mns_23</nom_bdd>
+				<utilisateur_bdd>root</utilisateur_bdd>
+				<mot_de_passe_bdd></mot_de_passe_bdd>
+				<ddl_auto>create</ddl_auto>
+				<nom_fichier_sql>mysql</nom_fichier_sql>
+				<initialisation_donne_bdd>true</initialisation_donne_bdd>
+				<mod_initialisation_donne_bdd>always</mod_initialisation_donne_bdd>
+				<dossier_upload>C:\Users\Kévin\.m2\settings.xml</dossier_upload>
+				<jwt_secret>azerty</jwt_secret>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<skipUnitTest>true</skipUnitTest>
+				<adresse_serveur_bdd>172.18.0.0:3306</adresse_serveur_bdd>
+				<nom_bdd>spring_mns_23</nom_bdd>
+				<utilisateur_bdd>root</utilisateur_bdd>
+				<mot_de_passe_bdd>Info à définir dans le fichier settings.xml du serveur</mot_de_passe_bdd>
+				<ddl_auto>none</ddl_auto>
+				<nom_fichier_sql></nom_fichier_sql>
+				<initialisation_donne_bdd>false</initialisation_donne_bdd>
+				<mod_initialisation_donne_bdd>never</mod_initialisation_donne_bdd>
+				<dossier_upload>/uploads</dossier_upload>
+				<jwt_secret>info à définir dans le fichier settings.xml du serveur</jwt_secret>
+			</properties>
+		</profile>
+	</profiles>
 	<build>
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId> org.apache.maven.plugins</groupId>
+				<artifactId> maven-surefire-plugin</artifactId>
+				<version>3.0.0-M6</version>
+				<configuration>
+					<skipTests>${skipUnitTest}</skipTests>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
 			</plugin>
 		</plugins>
 	</build>
