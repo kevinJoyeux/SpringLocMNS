@@ -5,38 +5,38 @@ INSERT INTO `Utilisateur` (`nom`, `prenom`, `email`, `mot_de_passe`, `login`, `s
 Insert INTO `Lieu_Stockage` values (1, "MNS"),
                                    (2,"IFA");
 INSERT INTO `Categorie` values (1, "ordinateur"),
-                               (2,"videoproj");
+                               (2,"videoprojecteur");
 INSERT INTO `Marque` values (1,"Asus"),
                             (2,"Lenovo");
 INSERT INTO `Documentation` values (1,"doc1"),
                                    (2,"doc2");
-INSERT INTO `Modele` (`id`, `nom`, `marque_id`) values (1, "test1",1),
-                                                       (2,"test2",1),
-                                                       (3,"test3",2);
-INSERT INTO `Materiel`(`id`, `matricule`, `categorie_id`, `lieu_stockage_id`, `modele_id`) VALUES (1,"lolo",1,1,2),
-                                                                                                  (2,"lala",2,1,1),
-                                                                                                  (3,"lulu",1,2,3);
+INSERT INTO `Modele` (`id`, `nom`, `marque_id`) values (1, "mod1",1),
+                                                       (2,"mod2",1),
+                                                       (3,"mod3",2);
+INSERT INTO `Materiel`(`id`, `matricule`, `categorie_id`, `lieu_stockage_id`, `modele_id`) VALUES (1,"1234",1,1,2),
+                                                                                                  (2,"5678",2,1,1),
+                                                                                                  (3,"9012",1,2,3);
 INSERT INTO `Materiel_Documentation` VALUES (1,2),
                                             (1,1),
                                             (1,1),
                                             (2,1);
-INSERT INTO `Location` values (1,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 3 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),true,"louer pour blabla",1),
-                              (2,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 8 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 5 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),UTC_TIMESTAMP(),false,"louer pour bla",1),
-                              (3,DATE(UTC_TIMESTAMP()),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 4 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 4 DAY),UTC_TIMESTAMP(),true,"louer pour rien",3),
-                              (4,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 3 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),true,"louer pour blabla",1),
-                              (5,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 8 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 5 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),UTC_TIMESTAMP(),false,"louer pour bla",1),
-                              (6,DATE(UTC_TIMESTAMP()),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 4 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 4 DAY),UTC_TIMESTAMP(),false,"louer pour rien",3);
+INSERT INTO `Location` values (1,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 3 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),true,"louer pour une reunion",1),
+                              (2,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 8 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 5 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),UTC_TIMESTAMP(),false,"louer pour un cours",1),
+                              (3,DATE(UTC_TIMESTAMP()),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 4 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 4 DAY),UTC_TIMESTAMP(),true,"pas de raison",3),
+                              (4,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 3 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),true,"location cours",1),
+                              (5,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 9 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 8 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 5 DAY),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),UTC_TIMESTAMP(),false,"location visio",1),
+                              (6,DATE(UTC_TIMESTAMP()),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 4 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 1 DAY),UTC_TIMESTAMP(),DATE_ADD(UTC_TIMESTAMP(), INTERVAL 4 DAY),UTC_TIMESTAMP(),false,"rien",3);
 
 
 INSERT INTO `Etat_Materiel` values (1,"En Etat"),
                                    (2,"Abime");
 INSERT INTO `Materiel_Etat_Materiel` VALUES (UTC_TIMESTAMP(),1,1), (UTC_TIMESTAMP(),1,2),(DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),1,3),(DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),1,2);
-INSERT INTO `location_materiel`(`location_id`, `materiel_id`, `date_retour_materiel`, `retour`) VALUES (1,1,UTC_TIMESTAMP(),"Pas content"),
+INSERT INTO `location_materiel`(`location_id`, `materiel_id`, `date_retour_materiel`, `retour`) VALUES (1,1,UTC_TIMESTAMP(),"satisfait"),
                                                                                                        (2,1,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),"Pas content"),
-                                                                                                       (3,2,UTC_TIMESTAMP(),"Pas content"),
-                                                                                                       (4,2,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),"Pas content"),
-                                                                                                       (5,2,UTC_TIMESTAMP(),"Pas content"),
-                                                                                                       (6,1,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),"Pas content");
+                                                                                                       (3,2,UTC_TIMESTAMP(),"peut mieux faire"),
+                                                                                                       (4,2,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),"pas satisfait"),
+                                                                                                       (5,2,UTC_TIMESTAMP(),"parfait"),
+                                                                                                       (6,1,DATE_ADD(UTC_TIMESTAMP(), INTERVAL 7 DAY),"mouais");
 SET time_zone = '+00:00';
 
 

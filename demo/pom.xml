@@ -95,7 +95,7 @@
 				<password_bdd>Info à définir dans le fichier settings.xml du serveur</password_bdd>
 				<ddl_auto>create</ddl_auto>
 				<nom_fichier_sql></nom_fichier_sql>
-				<initialisation_donne_bdd>false</initialisation_donne_bdd>
+				<initialisation_donne_bdd>true</initialisation_donne_bdd>
 				<mod_initialisation_donne_bdd>never</mod_initialisation_donne_bdd>
 				<dossier_upload>/uploads</dossier_upload>
 				<jwt_secret>info à définir dans le fichier settings.xml du serveur choisi</jwt_secret>
