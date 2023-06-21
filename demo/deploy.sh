@@ -2,9 +2,9 @@
 # Mettre à jour le code source
 git pull
 # Construire le projet
-bash mvnw package -P prod -e
+bash mvnw package -P prod, sysadmin --settings /home/debian/.m2/settings.xml
 # Construire l'image Docker
-docker build --no-cache -t image-spring-kevin
+docker build --no-cache -t image-spring-kevin.
 # Arreter le conteneur existant
 docker stop conteneur-spring-kevin
 # Supprimer le conteneur existant
