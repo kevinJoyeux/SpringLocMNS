@@ -4,10 +4,10 @@ git pull
 # Construire le projet
 sudo bash mvnw --settings /home/debian/.m2/settings.xml package -Pprod -Psysadmin
 # Construire l'image Docker
-docker build --no-cache -t image-spring-kevin.
+docker build --no-cache -t image-spring-kevin .
 # Arreter le conteneur existant
 docker stop conteneur-spring-kevin
 # Supprimer le conteneur existant
 docker rm -f conteneur-spring-kevin
 # Lancer un nouveau conteneur
-docker run -d --net backend --ip 172.18.0.5 --name=conteneur-spring-kevin -p 8181:8080 -v uploaded_files:/uploads image-spring-kevin
+docker run -d --net backend --ip 172.18.0.4 --name=conteneur-spring-kevin -p 8080:8080 -v uploaded_files:/uploads image-spring-kevin
