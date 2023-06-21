@@ -74,7 +74,7 @@
 			<properties>
 				<skipUnitTest>false</skipUnitTest>
 				<adresse_serveur_bdd>localhost:3306</adresse_serveur_bdd>
-				<nom_bdd>spring_mns_23</nom_bdd>
+				<nom_bdd>locmns_kevin</nom_bdd>
 				<utilisateur_bdd>root</utilisateur_bdd>
 				<password_bdd></password_bdd>
 				<ddl_auto>create</ddl_auto>
@@ -90,7 +90,7 @@
 			<properties>
 				<skipUnitTest>true</skipUnitTest>
 				<adresse_serveur_bdd>172.18.0.2:3306</adresse_serveur_bdd>
-				<nom_bdd>spring_mns_23</nom_bdd>
+				<nom_bdd>locmns_kevin</nom_bdd>
 				<utilisateur_bdd>root</utilisateur_bdd>
 				<password_bdd>Info à définir dans le fichier settings.xml du serveur</password_bdd>
 				<ddl_auto>create</ddl_auto>
