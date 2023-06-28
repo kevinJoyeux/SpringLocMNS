@@ -9,8 +9,8 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Table(name = "location_materiel")
@@ -23,7 +23,6 @@ public class LocationMateriel {
     @Id
     private Integer location_id;
     private String retour;
-    @Id
     private LocalDate DateRetourMateriel;
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -35,6 +34,14 @@ public class LocationMateriel {
     @MapsId
     @JoinColumn(name = "location_id")
     private Location location;
+    @Embeddable
+    @Getter
+    @Setter
+    public class CleLocationMateriel implements Serializable {
+        private Integer materiel_id;
+        private Integer location_id;
 
+
+    }
 
 }

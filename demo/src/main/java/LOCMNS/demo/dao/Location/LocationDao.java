@@ -4,13 +4,14 @@ import LOCMNS.demo.model.Location.Location;
 import LOCMNS.demo.model.Utilisateur.Utilisateur;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-
+@Repository
 public interface LocationDao extends JpaRepository<Location, Integer> {
     List<Location> findByDecisionTrue();
-    @Query("SELECT l from Location l where l.decision="+"false")
+    @Query("SELECT l from Location l where l.decision=false")
     List<Location> findByDecisionFalse();
 
     @Query("SELECT l from Location l where l.utilisateur.id=?1 and l.decision=false")
