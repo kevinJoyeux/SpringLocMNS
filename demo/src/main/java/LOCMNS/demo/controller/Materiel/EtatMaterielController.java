@@ -30,27 +30,4 @@ public class EtatMaterielController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    /*@PostMapping("/etatmateriel")
-    public ResponseEntity<EtatMateriel> ajoutEtatMateriel(@RequestBody EtatMateriel nouvelEtatMateriel){
-        if(nouvelEtatMateriel.getId()!=null){
-            Optional<EtatMateriel> optional = etatMaterielDao.findById(nouvelEtatMateriel.getId());
-            if(optional.isPresent()){
-                this.etatMaterielDao.save(nouvelEtatMateriel);
-                return new ResponseEntity<>(nouvelEtatMateriel,HttpStatus.OK);
-            }
-            return new ResponseEntity<>(nouvelEtatMateriel,HttpStatus.BAD_REQUEST);
-        }else{
-            this.etatMaterielDao.save(nouvelEtatMateriel);
-            return new ResponseEntity<>(HttpStatus.CREATED);
-        }
-    }
-    @DeleteMapping("/etatmateriel/{id}")
-    public ResponseEntity<Utilisateur> supprimeEtatMateriel(@PathVariable int id) {
-        Optional<EtatMateriel> etatmaterielAsupprimer = etatMaterielDao.findById(id);
-        if (etatmaterielAsupprimer.isPresent()) {
-            etatMaterielDao.deleteById(id);
-            return new ResponseEntity<>(null, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }*/
 }

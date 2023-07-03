@@ -9,7 +9,6 @@ import java.util.Collection;
 import java.util.List;
 public class MonUserDetails implements UserDetails {
     Utilisateur utilisateur;
-
     public MonUserDetails(Utilisateur utilisateur){
         this.utilisateur=utilisateur;
     }
@@ -20,32 +19,26 @@ public class MonUserDetails implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(utilisateur.getStatut().getNomStatut()));
     }
-
     @Override
     public String getPassword() {
         return utilisateur.getMotDePasse();
     }
-
     @Override
     public String getUsername() {
         return utilisateur.getEmail();
     }
-
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
-
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
-
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
     @Override
     public boolean isEnabled() {
         return true;

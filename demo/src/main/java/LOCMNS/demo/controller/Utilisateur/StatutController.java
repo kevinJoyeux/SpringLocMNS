@@ -32,7 +32,7 @@ public class StatutController {
     }
     @PostMapping("/statut")
     public ResponseEntity<Statut> ajoutStatut(@RequestBody Statut nouveauStatut){
-        if(nouveauStatut.getId()!=null){ //le statut possède un id
+        if(nouveauStatut.getId()!=null){ // le statut possède un id
             Optional<Statut> optional = statutDao.findById(nouveauStatut.getId());
             if(optional.isPresent()){
                 this.statutDao.save(nouveauStatut);
